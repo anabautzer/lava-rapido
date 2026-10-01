@@ -9,9 +9,13 @@ export default function App() {
 
   return (
     <TicketContextProvider>
-      <Header/>
-      <Outlet/>
-      <Footer/>
+      <div className="flex min-h-screen flex-col bg-slate-50 text-slate-800">
+        <Header/>
+        <div className="flex-1">
+          <Outlet/>
+        </div>
+        <Footer/>
+      </div>
     </TicketContextProvider>
   )
 }
