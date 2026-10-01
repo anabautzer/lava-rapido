@@ -7,6 +7,7 @@ import ErrorPage from './pages/Error/ErrorPage.tsx'
 import HomePage from './pages/Home/HomePage.tsx'
 import AgendamentoPage from './pages/Agendamento/AgendamentoPage.tsx'
 import SobrePage from './pages/Sobre/SobrePage.tsx'
+import FilaDeEsperaPage from './pages/FilaDeEspera/FilaDeEsperaPage.tsx'
 
 
 const router = createBrowserRouter([
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
       {
         path: 'sobre',
         element: <SobrePage/>
+      },
+      {
+        path: 'fila',
+        element: <FilaDeEsperaPage/>
       }
     ]
   }

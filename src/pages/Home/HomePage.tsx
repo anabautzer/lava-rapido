@@ -1,8 +1,9 @@
 import { Link } from "react-router";
-import hero from "../../assets/hero.jpg";
 import carro1 from "../../assets/carro1.jpg";
 import carro2 from "../../assets/carro2.jpg";
 import carro3 from "../../assets/carro3.jpg";
+import carro4 from "../../assets/carro4.jpg";
+import { tempoLavagem, formatarTempo } from "../../dados/Tempo";
 
 
 const depoimentos = [
@@ -50,7 +51,7 @@ export default function HomePage(){
                     </div>
                     <img
                         className="h-80 w-full rounded-2xl object-cover shadow-2xl ring-1 ring-white/10"
-                        src={hero}
+                        src={carro4}
                         alt="Carro limpo e brilhando"
                     />
                 </div>
@@ -64,7 +65,24 @@ export default function HomePage(){
                         <article
                             key={serv.id}
                             className="rounded-2xl border-t-4 border-sky-500 bg-white p-6 shadow-md transition hover:-translate-y-1 hover:shadow-xl">
-                            <h3 className="text-xl font-semibold text-slate-900">{serv.nome}</h3>
+                            <div className="flex items-center justify-between gap-4">
+                                <h3 className="text-xl font-semibold text-slate-900">{serv.nome}</h3>
+                                <span className="flex items-center gap-1 rounded-full bg-sky-100 px-3 py-1 text-sm font-semibold text-sky-700">
+                                    <svg
+                                        className="h-4 w-4"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        strokeWidth="2"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        aria-hidden="true">
+                                        <circle cx="12" cy="12" r="10"/>
+                                        <polyline points="12 6 12 12 16 14"/>
+                                    </svg>
+                                    {formatarTempo(tempoLavagem[serv.nome])}
+                                </span>
+                            </div>
                             <p className="mt-2 text-slate-600">{serv.descricao}</p>
                         </article>
                     ))}
